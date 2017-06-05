@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Marcell Bán">
+    <title>JS calculator</title>
+    <link rel="stylesheet" href="css/calculator.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <span id="prev-input"></span>
+      <br>
+      <form>
+        <input type="text" id="input-row" disabled>
+      </form>
+      <br>
+      <div id="button-wrapper">
+        <div class="button-row">
+          <button id="number-7">7</button>
+          <button id="number-8">8</button>
+          <button id="number-9">9</button>
+          <button id="operator-divide">/</button>
+          <button id="operator-modulo">%</button>
+        </div>
+        <br>
+        <div class="button-row">
+          <button id="number-4">4</button>
+          <button id="number-5">5</button>
+          <button id="number-6">6</button>
+          <button id="operator-multiply">*</button>
+        </div>
+        <br>
+        <div class="button-row">
+          <button id="number-1">1</button>
+          <button id="number-2">2</button>
+          <button id="number-3">3</button>
+          <button id="operator-minus">-</button>
+          <button id="operator-CE">CE</button>
+        </div>
+        <br>
+        <div class="button-row">
+          <button id="number-0">0</button>
+          <button id="operator-sign">+/-</button>
+          <button id="operator-dot">.</button>
+          <button id="operator-plus">+</button>
+          <button id="operator-calculate">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
