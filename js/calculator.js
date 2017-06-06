@@ -10,6 +10,7 @@ function calculator() {
 }
 
 function buttonPressHandler() {
+    $(this).animate({top: '2px', left: '1px'}, 'fast');
     var oldInputValue = inputRow.val();
     var buttonText = $(this).text();
     if (numbers.indexOf(buttonText) >= 0) {
@@ -47,6 +48,7 @@ function buttonPressHandler() {
                 break;
         }
     }
+    $(this).animate({top: '0', left: '0'}, 'fast');
 }
 
 function appendNumber(oldInputValue, buttonText) {
