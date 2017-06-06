@@ -88,15 +88,17 @@ function changeSign(oldInputValue) {
 }
 
 function calculateResult(oldInputValue) {
-    if (!showingResult) {
-        secondValue = Number(oldInputValue);
+    if (firstValue && operator) {
+        if (!showingResult) {
+            secondValue = Number(oldInputValue);
+        }
+        var result = executeOperation();
+        inputRow.val(result);
+        prevText.text(firstValue + ' ' + operator + ' ' + secondValue + ' =');
+        firstValue = result;
+        showingResult = true;
+        dotPressed = false;
     }
-    var result = executeOperation();
-    inputRow.val(result);
-    prevText.text(firstValue + ' ' + operator + ' ' + secondValue + ' =');
-    firstValue = result;
-    showingResult = true;
-    dotPressed = false;
 }
 
 function executeOperation() {
