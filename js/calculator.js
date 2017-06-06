@@ -23,13 +23,6 @@ function buttonHandler() {
             showingResult = false;
         }
         inputRow.val(oldInputValue + buttonText);
-    } else if (buttonText === '.' && !dotPressed) {
-        if (showingResult) {
-            oldInputValue = '';
-            showingResult = false;
-        }
-        dotPressed = true;
-        inputRow.val(oldInputValue + '.');
     } else if (operators.indexOf(buttonText) >= 0) {
         showingResult = false;
         operator = buttonText;
@@ -37,6 +30,13 @@ function buttonHandler() {
         dotPressed = false;
         inputRow.val('');
         prevText.text(firstValue + ' ' + operator);
+    } else if (buttonText === '.' && !dotPressed) {
+        if (showingResult) {
+            oldInputValue = '';
+            showingResult = false;
+        }
+        dotPressed = true;
+        inputRow.val(oldInputValue + '.');
     } else if (buttonText === '+/-') {
         if (oldInputValue.startsWith('-')) {
             inputRow.val(oldInputValue.replace('-', ''));
@@ -61,6 +61,24 @@ function buttonHandler() {
         operator = undefined;
         inputRow.val('');
         prevText.text('');
+    } else if (buttonText === 'C') {
+        showingResult = false;
+        dotPressed = false;
+        inputRow.val('');
+    } else if (buttonText === 'MR') {
+        if (localStorage.calculatorMemory) {
+            inputRow.val(localStorage.calculatorMemory);
+        }
+    } else if (buttonText === 'MC') {
+        if (localStorage.calculatorMemory) {
+            localStorage.removeItem('calculatorMemory');
+        }
+    } else if (buttonText === 'M+') {
+        if (localStorage.calculatorMemory) {
+            localStorage.calculatorMemory = Number(localStorage.calculatorMemory) + Number(oldInputValue);
+        } else {
+            localStorage.calculatorMemory = oldInputValue;
+        }
     }
 }
 
